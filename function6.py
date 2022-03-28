@@ -4,7 +4,7 @@ def get_winning_player(board):
         print(row)
         if row.count(row[0]) == len(row) and row[0] != ["."]:
             print(f"Player {row[0]} is the Winner!")
-            return True
+            return row[0]
   
     # For vertical row check
     for col in range(len(board)):
@@ -15,7 +15,7 @@ def get_winning_player(board):
 
         if check.count(check[0]) == len(check) and check[0] != 0:
             print(f"Player {check[0]} is the Winner!")
-            return True
+            return check[0]
 
     # for diagonal row check
     diags = []
@@ -24,16 +24,16 @@ def get_winning_player(board):
         diags.append(board[row][col])
     if diags.count(row[0]) == len(row) and row[0] != ["."]:
         print(f"Player {diags[0]} is the Winner!")
-        return True
+        return diags[0]
 
     diags = []
     for index in range(len(board)):
         diags.append(board[index][index])
     if diags.count(row[0]) == len(row) and row[0] != ["."]:
         print(f"Player {diags[0]} is the Winner!")
-        return True
+        return diags[0]
 
-    return False
+    return None
 
 
 """Should return the player that wins based on the tic tac toe rules.

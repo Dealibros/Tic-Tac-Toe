@@ -2,8 +2,8 @@ from function0 import display_board
 from function1 import get_menu_option
 from function2 import get_empty_board
 from function3 import get_human_coordinates
-from function4 import get_random_ai_coordinates
-from function5 import get_umbeatable_ai_coordinates
+""" from function4 import get_random_ai_coordinates
+from function5 import get_umbeatable_ai_coordinates """
 from function6 import get_winning_player
 from function7 import is_board_full
 
