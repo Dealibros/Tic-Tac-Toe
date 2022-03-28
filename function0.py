@@ -1,6 +1,12 @@
+
+
+
 def display_board(board):
-  """
-  Should print the tic tac toe board in a format similar to
+ pass
+
+
+
+"""Should print the tic tac toe board in a format similar to
        1   2   3
     A   X | O | . 
        ---+---+---
@@ -9,8 +15,6 @@ def display_board(board):
     C   0 | X | . 
        --+---+---
   """
-  pass
-
 
 
 if __name__ == "__main__":
