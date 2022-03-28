@@ -13,7 +13,7 @@ def get_menu_option():
         print("Human vs Unbeatable AI")
         return 4
 
-  # There is a much shorter and elegant way to make this. Look it up
+  # There is a much shorter and elegant way to make this. Look up the correction El did fro last project
 """
   Should print a menu with the following options:
   1. Human vs Human

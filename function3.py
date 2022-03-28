@@ -1,5 +1,6 @@
 def get_human_coordinates(board, current_player):
-    while(True):
+  # needs to be corrected. 
+    """ while(True):
       game_move = input("Your turn to move")
       row = ['A', 'B', 'C']
       column = [1, 2, 3]
@@ -9,8 +10,9 @@ def get_human_coordinates(board, current_player):
         print("Wrong Input. Please try again")
       elif game_move === "Quit".low() or "Quit".upper()
       print("Game is over!")
-      exit()
+      exit() """
     
+    #N
 
 
  """Should return the read coordinates for the tic tac toe board from the terminal.
