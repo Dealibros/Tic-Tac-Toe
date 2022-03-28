@@ -1,52 +1,40 @@
 def get_winning_player(board):
-  # to check if there is a win in a dinamic way. No hard coded.
-# Horizontal rown
-   """  for row in board: # board
+    # Horizontal rown check
+    for row in board:
         print(row)
-        all_match = True
-        for item in row:
-          if item != row[0] and row[0] != ".":
-            all_match = False
-        if all_match:
-          print("Winner") """
-# Another much shorter way for horizontal row (Preferred)
-
-    for row in board: # board
-      print(row)
-      if row.count(row[0]) == len(row) and row[0] != ["."]:
-        print(f"Player {row[0]} is the Winner!")
+        if row.count(row[0]) == len(row) and row[0] != ["."]:
+            print(f"Player {row[0]} is the Winner!")
+            return True
   
-
-  # For vertical row
+    # For vertical row check
     for col in range(len(board)):
-      check = []
+        check = []
 
-      for row in board:
+    for row in board:
         check.append(row[col])
 
-      if check.count(check[0]) == len(check) and check[0] != 0:
-        print(f"Player {check[0]} is the Winner!")
+        if check.count(check[0]) == len(check) and check[0] != 0:
+            print(f"Player {check[0]} is the Winner!")
+            return True
 
-
-  # for diagonal row check
-    """ cols = reversed(range(len(board)))
-    rows = range(len(board))
-    for col, row in zip(cols, rows):
-      print(col, row) """
-
-    # second better option for diagonal check
+    # for diagonal row check
     diags = []
-    for col, row in enumerate(reversed(range(len(board))))
-      print(col, row) 
-      diags.append(board[row][col])
+    for col, row in enumerate(reversed(range(len(board)))):
+        print(col, row)
+        diags.append(board[row][col])
     if diags.count(row[0]) == len(row) and row[0] != ["."]:
         print(f"Player {diags[0]} is the Winner!")
+        return True
 
     diags = []
     for index in range(len(board)):
-      diags.append(board[index][index])
+        diags.append(board[index][index])
     if diags.count(row[0]) == len(row) and row[0] != ["."]:
         print(f"Player {diags[0]} is the Winner!")
+        return True
+
+    return False
+
 
 """Should return the player that wins based on the tic tac toe rules.
 If no player has won, than "None" is returned."""

@@ -1,6 +1,61 @@
-def get_human_coordinates(board, current_player):
-  # needs to be corrected. 
-    """ while(True):
+import itertools
+
+# Changed board for display Board
+def get_human_coordinates(display_board, player=0, row=0, column=0, just_display=False): 
+  try:
+    if display_board == "Quit".lower() or "Quit".upper():
+      print("Game is over!")
+      exit()
+    elif display_board[row][column] != 0:
+        print("This position is taken! Choose another!")
+        return display_board, False
+    if not just_display:
+        display_board[row][column] = player
+        return display_board, True
+
+  except IndexError as e:
+    print("Error:make sure your input row/column as 0, 1, 2, A, B, C", e)
+    return display_board, False
+
+  except Exception as e:
+    print("Something went wrong!", e)
+    return display_board, False
+
+
+  play = True
+  players = [1,2]
+  while play:
+    display_board()
+
+    game_won = False
+    game, _ = display_board(game, just_display=True)
+    player_choice = itertools.cycle([1,2])
+    while not game_won:
+      current_player = next(player_choice)
+      print(f"Current Player: {current_player}")
+      played = False
+
+      while not played:
+        column_choice = int(input("What column do you want to play? (1, 2, 3): "))
+        row_choice = input("What row do you want to play? (A, B, C): ")
+        # Should we ask for one input?  A?1? Or two? A1
+        game, played = display_board(game, current_player, column_choice, row_choice)
+    
+
+    if get_human_coordinates(game):
+      game_won = True
+      again = input("The game is over, would you like to play again? (y/n) ")
+      if again.lower() == "y":
+          print("restarting")
+      elif again.lower() == "n":
+        print("Bye")
+        play = False
+      else:
+        print("Not a valid answer")
+      play = False
+
+
+          """ while(True):
       game_move = input("Your turn to move")
       row = ['A', 'B', 'C']
       column = [1, 2, 3]
