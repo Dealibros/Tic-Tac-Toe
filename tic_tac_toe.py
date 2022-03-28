@@ -8,22 +8,30 @@ from function6 import get_winning_player
 from function7 import is_board_full
 
 
+import itertools
+
 HUMAN_VS_HUMAN = 1
 RANDOM_AI_VS_RANDOM_AI = 2
 HUMAN_VS_RANDOM_AI = 3
 HUMAN_VS_UNBEATABLE_AI = 4
 
+
 def main():
-    game_mode = get_menu_option()
+    # took away the parameter valid_input from function and here.
+    game_mode = get_menu_option(valid_input=True)
     board = get_empty_board()
     is_game_running = True
     while is_game_running:
         display_board(board)
         
+        
         ### TO DO ###
         # in each new iteration of the while loop the program should 
         # alternate the value of `current_player` from `X` to `O`
-        current_player = 'X'
+        player_choice = itertools.cycle(["X", "O"])
+        current_player = next(player_choice)
+        print(f"Current Player: {current_player}")
+        """ played = False """
         
         ### TO DO ###
         # based on the value of the variables `game_mode` and `current_player` 

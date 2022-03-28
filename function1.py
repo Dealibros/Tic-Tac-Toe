@@ -1,4 +1,5 @@
-def get_menu_option(valid_input):
+def get_menu_option(valid_input=True):
+    # took away valid_input as parameter (some bug here)
 
     g1 = "1. Human vs Human"
     g2 = "2. Random AI vs Random AI"
@@ -9,7 +10,7 @@ def get_menu_option(valid_input):
 
     print(f"{g1}\n{g2}\n{g3}\n{g4}\n")
 
-    while True:
+    while valid_input is True:
         game_mode = input("Your choice: ")
         if game_mode == "1":
             print(f"\nYou choose: {g1[3:]}.\nLet's play number:")

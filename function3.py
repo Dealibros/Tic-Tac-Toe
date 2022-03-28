@@ -3,14 +3,46 @@ import itertools
 # Changed board for display Board
 
 
-def get_human_coordinates(display_board, player=0, row=0, column=0, just_display=False): 
-    try:
-        if display_board == "Quit".lower() or "Quit".upper():
+# def get_human_coordinates(display_board, player=0, row=0, column=0, just_display=False): Before
+# The current player value is X or 0!!!
+# board 
+def get_human_coordinates(board, current_player): 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# Needs to be completly redone.
+  
+    """ try:
+      column_choice = int(input("What column do you want to play? (1, 2, 3): "))
+      row_choice = input("What row do you want to play? (A, B, C): ")
+            return print(column_choice, row_choice)
+        if board_input == "Quit".lower() or "Quit".upper():
             print("Game is over!")
             exit()
-        elif display_board[row][column] != 0:
+        elif board_input[row][column] != 0:
             print("This position is taken! Choose another!")
-            return display_board, False
+            return  passdisplay_board, False
         if not just_display:
             display_board[row][column] = player
             return display_board, True
@@ -23,8 +55,7 @@ def get_human_coordinates(display_board, player=0, row=0, column=0, just_display
         print("Something went wrong!", e)
         return display_board, False
 
-    play = True
-    player = [1, 2]
+    # From here move to end game !
     while play:
         display_board()
 
@@ -59,7 +90,7 @@ def get_human_coordinates(display_board, player=0, row=0, column=0, just_display
             play = False
         else:
             print("Not a valid answer")
-            play = False
+            play = False """
 
 
 """ Should return the read coordinates for the tic tac toe board from the terminal

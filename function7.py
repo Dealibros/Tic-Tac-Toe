@@ -1,9 +1,16 @@
 def is_board_full(board):
+    value = True
+    for space in board:
+      if "." in space:
+          value = False
+          break
+    return value
+
   """
   should return True if there are no more empty place on the board,
   otherwise should return False
   """
-  pass
+ 
 
 
 if __name__ == "__main__":
