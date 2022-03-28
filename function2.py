@@ -1,5 +1,5 @@
 def get_empty_board():
-    board = [['.', '.', '.'],['.', '.', '.'],['.', '.', '.'],]
+    board = [['.', '.', '.'], ['.', '.', '.'], ['.', '.', '.'], ]
     return board
     '''
     Should return a list with 3 sublists.

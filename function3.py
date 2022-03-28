@@ -29,6 +29,8 @@ def get_human_coordinates(display_board, player=0, row=0, column=0, just_display
 
     game_won = False
     game, _ = display_board(game, just_display=True)
+
+    # Selecting the player should be done on the end tic_tac_toe.py
     player_choice = itertools.cycle([1,2])
     while not game_won:
       current_player = next(player_choice)
@@ -42,6 +44,7 @@ def get_human_coordinates(display_board, player=0, row=0, column=0, just_display
         game, played = display_board(game, current_player, column_choice, row_choice)
     
 
+# THis could be moved as well to the end code tic_tac_toe.py
     if get_human_coordinates(game):
       game_won = True
       again = input("The game is over, would you like to play again? (y/n) ")
@@ -52,22 +55,7 @@ def get_human_coordinates(display_board, player=0, row=0, column=0, just_display
         play = False
       else:
         print("Not a valid answer")
-      play = False
-
-
-          """ while(True):
-      game_move = input("Your turn to move")
-      row = ['A', 'B', 'C']
-      column = [1, 2, 3]
-      if row not in game_move or column not in game_move:
-      elif len(game_move) != 2:
-      elif game_move in game_already
-        print("Wrong Input. Please try again")
-      elif game_move === "Quit".low() or "Quit".upper()
-      print("Game is over!")
-      exit() """
-    
-    #N
+        play = False
 
 
  """Should return the read coordinates for the tic tac toe board from the terminal.
