@@ -5,33 +5,65 @@
 # The current player value is X or 0!!!
 # board 
 def get_human_coordinates(board, current_player): 
+
+    A1 = board[0][0]
+    A2 = board[0][1]
+    A3 = board[0][2]
+    B1 = board[1][0]
+    B2 = board[1][1]
+    B3 = board[1][2]
+    C1 = board[2][0]
+    C2 = board[2][1]
+    C3 = board[2][2]
+
+    """ board[0][0] = "A1"
+    board[0][1] = "A2"
+    board[0][2] = "A3"
+    board[1][0] = "B1"
+    board[1][1] = "B2"
+    board[1][2] = "B3"
+    board[2][0] = "C1"
+    board[2][1] = "C2"
+    board[2][2] = "C3" """
+
     guess = False
     while guess is False:
         answer = input("Please enter the coordinates: ")
+        print("answer", answer)  # answer as input is always a string
         if answer == "quit".upper() or answer == "quit".lower():
             print("Game is over!")
             exit()
         elif answer[0] not in ["A", "B", "C"] or answer[1] not in ["1", "2", "3"]:
             print("Invalid input. Please try again.")
-            guess is False
-        elif board[answer[0]][answer[1]] == 'O' or board[answer[0]][answer[1]] == 'X':
-            print("This position is taken! Choose another!")
+        elif answer == 'X' or answer == 'O':
+            print("answer", answer)
+            print("board", board)
+            print("Invalid input. Please try again.")
+            print("This space is occupied. Please try again.")
         else:
             guess = True
-    return print(answer[0], answer[1])
+    return print(answer[0] + answer[1])
 
       
-#get_human_coordinates(board, current_player)
+# get_human_coordinates(board, current_player)
 
 
 
 """  row = input("Choose your row from A-C: ")
 column = input("Choose your column from 1-3: ") """
 
+"""        # error1 "list indices must be integers or slices, not str"
+            # error2 'list' object is not callable
+        elif answer:
+            # print("see answer"(answer[0] + answer[1]) # still a string
+            print("board", board)
+            # board value # board[['X', 'X', '.'], ['X', '.', '.'], ['X', 'X', '.']]
+            # after the above line, board is a list of lists 
+            # board[['A1', 'A2', 'A3'], ['B1', 'B2', 'B3'], ['C1', 'C2', 'C3']]
+            # Maybe it could work through a dictionary? {A1: 'X', A2: 'X', A3: '.'}??
 
 
-
-
+ """
 
 
 
