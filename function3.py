@@ -34,7 +34,9 @@ def get_human_coordinates(board, current_player):
                 print(values, board_values[values])
                 if answer == values:
                     if board_values[values] == ".":
-                        board[int(answer[1]) - 1][ord(answer[0]) - 65] = current_player
+                        print("current player", current_player)
+                        board[ord(answer[0]) - 65][int(answer[1]) - 1] = current_player
+                        print("newboard", board)
                         guess = True
                         break
                     else:
@@ -42,28 +44,10 @@ def get_human_coordinates(board, current_player):
                         break
         else:
             guess = True
-    return print(answer[0] + answer[1])
+    return board, current_player
 
       
 # get_human_coordinates(board, current_player)
-
-
-
-"""  row = input("Choose your row from A-C: ")
-column = input("Choose your column from 1-3: ") """
-
-"""        # error1 "list indices must be integers or slices, not str"
-            # error2 'list' object is not callable
-        elif answer:
-            # print("see answer"(answer[0] + answer[1]) # still a string
-            print("board", board)
-            # board value # board[['X', 'X', '.'], ['X', '.', '.'], ['X', 'X', '.']]
-            # after the above line, board is a list of lists 
-            # board[['A1', 'A2', 'A3'], ['B1', 'B2', 'B3'], ['C1', 'C2', 'C3']]
-            # Maybe it could work through a dictionary? {A1: 'X', A2: 'X', A3: '.'}??
-
-
- """
 
 
 
@@ -80,53 +64,10 @@ column = input("Choose your column from 1-3: ") """
 
 # Needs to be completly redone.
  
-""" try:
-column_choice = int(input("What column do you want to play? (1, 2, 3): "))
-row_choice = input("What row do you want to play? (A, B, C): ")
-      return print(column_choice, row_choice)
-  if board_input == "Quit".lower() or "Quit".upper():
-      print("Game is over!")
-      exit()
-  elif board_input[row][column] != 0:
-      print("This position is taken! Choose another!")
-      return  passdisplay_board, False
-  if not just_display:
-      display_board[row][column] = player
-      return display_board, True
-
-except IndexError as e:
-  print("Error:make sure your input row/column as 0, 1, 2, A, B, C", e)
-  return display_board, False
-
-except Exception as e:
-  print("Something went wrong!", e)
-  return display_board, False
-
-# From here move to end game !
-while play:
-  display_board()
-
-game_won = False
-game, _ = display_board(game, just_display=True)
-
-# Selecting the player should be done on the end tic_tac_toe.py
-player_choice = itertools.cycle([1, 2])
-while not game_won:
-  current_player = next(player_choice)
-  print(f"Current Player: {current_player}")
-  played = False
-
-  while not played:
-      column_choice = int(input("What column do you want to play? (1, 2, 3): "))
-      row_choice = input("What row do you want to play? (A, B, C): ")
-      return print(column_choice, row_choice)
-
-  
-# Should we ask for one input?  A?1? Or two? A1
-  game, played = display_board(game, current_player, column_choice, row_choice)
 
 
-# THis could be moved as well to the end code tic_tac_toe.py
+
+""" # THis could be moved as well to the end code tic_tac_toe.py
 if get_human_coordinates(game):
   game_won = True
   again = input("The game is over, would you like to play again? (y/n) ")
@@ -137,7 +78,7 @@ if get_human_coordinates(game):
       play = False
   else:
       print("Not a valid answer")
-      play = False """
+      play = False """ 
 
 
 
@@ -149,5 +90,5 @@ if __name__ == "__main__":
     ["X", ".", "."],
     ["X", "X", "."],
   ]
-  coordinates = get_human_coordinates(board_1, "X")
-  print(coordinates) # the only possible returned value can be (0,2) or (1,1) or (1, 2) or (2,2) because they are the only valid ones
+# coordinates = get_human_coordinates(board_1, "X")
+# print(coordinates) # the only possible returned value can be (0,2) or (1,1) or (1, 2) or (2,2) because they are the only valid ones
