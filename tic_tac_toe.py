@@ -23,7 +23,9 @@ def main():
     is_game_running = True
     while is_game_running:
         display_board(board)
-        
+
+    # 0 or X  - A1, B1, C1 NOT WORKING VERTICAL
+
         
         ### TO DO ###
         # in each new iteration of the while loop the program should 

@@ -9,13 +9,11 @@ def get_winning_player(board):
     # For vertical row check!
     for col in range(len(board)):
         check = []
-
-    for row in board:
-        check.append(row[col])
-
-        if check.count(check[0]) == len(check) and check[0] != "." and len(check) > 2:
-            print(f"Player {check[0]} is the Winner vertical!")
-            exit()
+        for row in board:
+            check.append(row[col])
+            if check.count(check[0]) == len(check) and check[0] != "." and len(check) == 3:
+                print(f"Player {check[0]} is the Winner vertical!")
+                exit()
 
     # for diagonal row check
     diags = []
