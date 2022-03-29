@@ -31,16 +31,23 @@ def main():
         player_choice = itertools.cycle(["X", "O"])
         current_player = next(player_choice)
         print(f"Current Player: {current_player}")
-        """ played = False """
         
         ### TO DO ###
         # based on the value of the variables `game_mode` and `current_player` 
         # the programm should should choose betwen the functions
         # get_random_ai_coordinates or get_umbeatable_ai_coordinates or get_human_coordinates
         x, y = get_human_coordinates(board, current_player)
+        current_player = next(player_choice)
+        display_board(x)
+
+        print(f"Current Player: {current_player}")
+        x, y = get_human_coordinates(board, current_player)
         display_board(x)
         
-        board[x][y] = current_player
+        
+
+
+        # board[x][y] = current_player
         
 
         

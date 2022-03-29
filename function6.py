@@ -1,18 +1,15 @@
 def get_winning_player(board):
     # Horizontal rown check
     for row in board:
-       
         if row.count(row[0]) == len(row) and row[0] != ".":
             print(f"Player {row[0]} is the Winner horizontal!")
             exit()
   
-    # For vertical row check!= ["."]
+    # For vertical row check
     for col in range(len(board)):
         check = []
-
     for row in board:
         check.append(row[col])
-
         if check.count(check[0]) == len(check) and check[0] != ".":
             print(f"Player {check[0]} is the Winner vertical!")
             exit()
