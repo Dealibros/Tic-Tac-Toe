@@ -4,9 +4,8 @@ def is_board_full(board):
         for row in board:
             if "." in row:
                 return False
-            else:
-                print("Game Over. It's a Tie!")
-                return True 
+    print("Game Over. It's a Tie!")
+    return True
            
 
 
