@@ -1,7 +1,7 @@
 def get_winning_player(board):
     # Horizontal rown check
     for row in board:
-        print(row)
+       
         if row.count(row[0]) == len(row) and row[0] != ".":
             print(f"Player {row[0]} is the Winner horizontal!")
             exit()
@@ -12,7 +12,6 @@ def get_winning_player(board):
 
     for row in board:
         check.append(row[col])
-        print("check", check)
 
         if check.count(check[0]) == len(check) and check[0] != ".":
             print(f"Player {check[0]} is the Winner vertical!")
@@ -25,9 +24,7 @@ def get_winning_player(board):
     if diags.count(diags[0]) == len(diags) and diags[0] != ".":
         print(f"Player {diags[0]} is the Winner diagonal!")
         exit()
-  
-        
-
+       
     diags = []
     for index in range(len(board)):
         diags.append(board[index][index])

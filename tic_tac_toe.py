@@ -39,11 +39,10 @@ def main():
         # get_random_ai_coordinates or get_umbeatable_ai_coordinates or get_human_coordinates
         x, y = get_human_coordinates(board, current_player)
         display_board(x)
-        # board[x][y] = current_player
         
-        # If you try to unpack a NoneType object, you will throw the error TypeError: cannot unpack non-iterable NoneType object. A NoneType object is not a sequence and cannot return the next value using next() . To solve this error, ensure you do not assign a None value to the variable you want to unpack.
+        board[x][y] = current_player
+        
 
-        # board[x][y] = current_player
         
         ### TO DO ###
         # based on the values of `winning_player` and `its_a_tie` the program
