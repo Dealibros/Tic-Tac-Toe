@@ -37,8 +37,14 @@ def main():
         # the programm should should choose betwen the functions
         # get_random_ai_coordinates or get_umbeatable_ai_coordinates or get_human_coordinates
         x, y = get_human_coordinates(board, current_player)
-        current_player = next(player_choice)
         display_board(x)
+        winning_player = get_winning_player(board)
+        its_a_tie = is_board_full(board)
+        current_player = next(player_choice)
+        
+
+        # the issue I created is that the program will not stop when the there is a tie because the functions are not well positioned. 
+
 
         print(f"Current Player: {current_player}")
         x, y = get_human_coordinates(board, current_player)
