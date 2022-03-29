@@ -1,10 +1,14 @@
 def is_board_full(board):
-    value = True
-    for space in board:
-        if "." in space:
-            value = False
-            break
-        return value
+    for row in board:
+        print(row)
+        for row in board:
+            if "." in row:
+                return False
+            else:
+                print("Game Over. It's a Tie!")
+                return True 
+           
+
 
 
 """

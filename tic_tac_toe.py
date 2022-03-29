@@ -44,13 +44,7 @@ def main():
         x, y = get_human_coordinates(board, current_player)
         display_board(x)
         
-        
-
-
         # board[x][y] = current_player
-        
-
-        
         ### TO DO ###
         # based on the values of `winning_player` and `its_a_tie` the program
         # should either stop displaying a winning/tie message 
