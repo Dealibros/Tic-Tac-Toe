@@ -6,16 +6,7 @@
 # board 
 def get_human_coordinates(board, current_player): 
 
-    A1 = board[0][0]
-    A2 = board[0][1]
-    A3 = board[0][2]
-    B1 = board[1][0]
-    B2 = board[1][1]
-    B3 = board[1][2]
-    C1 = board[2][0]
-    C2 = board[2][1]
-    C3 = board[2][2]
-
+  
     """ board[0][0] = "A1"
     board[0][1] = "A2"
     board[0][2] = "A3"
@@ -28,17 +19,30 @@ def get_human_coordinates(board, current_player):
 
     guess = False
     while guess is False:
-        answer = input("Please enter the coordinates: ")
+        answer = input("Please enter the coordinates: ").upper()
         print("answer", answer)  # answer as input is always a string
-        if answer == "quit".upper() or answer == "quit".lower():
+        if answer == "QUIT":
             print("Game is over!")
             exit()
         elif answer[0] not in ["A", "B", "C"] or answer[1] not in ["1", "2", "3"]:
             print("Invalid input. Please try again.")
-        elif answer == 'X' or answer == 'O':
+        elif answer:
+            if answer == 'A1':
+                answer == board[0][0]
+            else:
+                print('no A1')
+            A2 = board[0][1]
+            A3 = board[0][2]
+            B1 = board[1][0]
+            B2 = board[1][1]
+            B3 = board[1][2]
+            C1 = board[2][0]
+            C2 = board[2][1]
+            C3 = board[2][2]
+            print("answer", answer)
+        elif answer == 'X' or board[answer] == 'O':      
             print("answer", answer)
             print("board", board)
-            print("Invalid input. Please try again.")
             print("This space is occupied. Please try again.")
         else:
             guess = True
