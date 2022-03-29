@@ -28,7 +28,7 @@ def main():
         ### TO DO ###
         # in each new iteration of the while loop the program should 
         # alternate the value of `current_player` from `X` to `O`
-        player_choice = itertools.cycle(["Z", "O"])
+        player_choice = itertools.cycle(["X", "O"])
         current_player = next(player_choice)
         print(f"Current Player: {current_player}")
         """ played = False """
@@ -38,6 +38,8 @@ def main():
         # the programm should should choose betwen the functions
         # get_random_ai_coordinates or get_umbeatable_ai_coordinates or get_human_coordinates
         x, y = get_human_coordinates(board, current_player)
+        display_board(x)
+        # board[x][y] = current_player
         
         # If you try to unpack a NoneType object, you will throw the error TypeError: cannot unpack non-iterable NoneType object. A NoneType object is not a sequence and cannot return the next value using next() . To solve this error, ensure you do not assign a None value to the variable you want to unpack.
 

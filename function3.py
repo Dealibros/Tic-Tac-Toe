@@ -30,21 +30,16 @@ def get_human_coordinates(board, current_player):
         elif answer:
             board_values = {'A1': board[0][0], 'A2': board[0][1], 'A3': board[0][2], 'B1': board[1][0], 'B2': board[1][1],  'B3': board[1][2], 'C1': board[2][0], 'C2': board[2][1], 'C3': board[2][2]}
             for values in board_values:
-                print('board', board)
                 print(values, board_values[values])
                 if answer == values:
                     if board_values[values] == ".":
-                        print("current player", current_player)
                         board[ord(answer[0]) - 65][int(answer[1]) - 1] = current_player
-                        print("newboard", board)
+                        print(board, current_player)
                         guess = True
-                        break
+                        return board, current_player
                     else:
                         print("This space is occupied. Please try again.")
                         break
-        else:
-            guess = True
-    return board, current_player
 
       
 # get_human_coordinates(board, current_player)
