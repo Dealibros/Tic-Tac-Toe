@@ -26,24 +26,20 @@ def get_human_coordinates(board, current_player):
             exit()
         elif answer[0] not in ["A", "B", "C"] or answer[1] not in ["1", "2", "3"]:
             print("Invalid input. Please try again.")
+            # This is trial
         elif answer:
-            if answer == 'A1':
-                answer == board[0][0]
-            else:
-                print('no A1')
-            A2 = board[0][1]
-            A3 = board[0][2]
-            B1 = board[1][0]
-            B2 = board[1][1]
-            B3 = board[1][2]
-            C1 = board[2][0]
-            C2 = board[2][1]
-            C3 = board[2][2]
-            print("answer", answer)
-        elif answer == 'X' or board[answer] == 'O':      
-            print("answer", answer)
-            print("board", board)
-            print("This space is occupied. Please try again.")
+            board_values = {'A1': board[0][0], 'A2': board[0][1], 'A3': board[0][2], 'B1': board[1][0], 'B2': board[1][1],  'B3': board[1][2], 'C1': board[2][0], 'C2': board[2][1], 'C3': board[2][2]}
+            for values in board_values:
+                print('board', board)
+                print(values, board_values[values])
+                if answer == values:
+                    if board_values[values] == ".":
+                        board[int(answer[1]) - 1][ord(answer[0]) - 65] = current_player
+                        guess = True
+                        break
+                    else:
+                        print("This space is occupied. Please try again.")
+                        break
         else:
             guess = True
     return print(answer[0] + answer[1])
