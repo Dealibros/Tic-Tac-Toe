@@ -46,8 +46,9 @@ def main():
             print(f"Current Player: {current_player}")
             x, y = get_human_coordinates(board, current_player)
             # display_board(x)
+
         elif game_mode == 3:
-            x = get_human_coordinates(board, current_player), 
+            x, y = get_human_coordinates(board, current_player)
             display_board(x)
             winning_player = get_winning_player(board)
             its_a_tie = is_board_full(board)
