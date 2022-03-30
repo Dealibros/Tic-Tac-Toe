@@ -1,25 +1,16 @@
 import random
+from function0 import display_board
 
 
 def get_random_ai_coordinates(board, current_player):
-    game = True
-    while game:
-        coordinates = [(0, 0), (0, 1), (0, 2), (1, 0), (1, 1), (1, 2), (2, 0), (2, 1), (2, 2)]
-        a, b = random.choice(coordinates)
-        print(a, b)
-        print("print list", coordinates)
-        if board[a][b] != "X" and board[a][b] != "O":
-            board[a][b] = current_player
-            return board, current_player
-        else:
-            game = False
-            print("test")
-            return None
-
-
-
-
-
+    
+    while "." not in board:
+      coordinates = [(0, 0), (0, 1), (0, 2), (1, 0), (1, 1), (1, 2), (2, 0), (2, 1), (2, 2)]
+      a, b = random.choice(coordinates)
+      if board[a][b] == ".":
+        board[a][b] = current_player
+        return board, current_player
+    display_board(board)
 
 
       #  a, b = coordinates.pop(random.randrange(len(coordinates))) """
