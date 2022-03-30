@@ -3,7 +3,7 @@ def get_human_coordinates(board, current_player):
     guess = False
     while guess is False:
         answer = input("Please enter the coordinates: ").upper()
-        print("answer", answer)  # answer as input is always a string
+        print("answer", answer)  
         if answer == "QUIT":
             print("Game is over!")
             exit()
@@ -13,8 +13,6 @@ def get_human_coordinates(board, current_player):
         elif answer:
             board_values = {'A1': board[0][0], 'A2': board[0][1], 'A3': board[0][2], 'B1': board[1][0], 'B2': board[1][1],  'B3': board[1][2], 'C1': board[2][0], 'C2': board[2][1], 'C3': board[2][2]}
             for values in board_values:
-                # print(values, board_values[values])
-                # print("answer", answer)
                 if answer == values:
                     if board_values[values] == ".":
                         board[ord(answer[0]) - 65][int(answer[1]) - 1] = current_player
@@ -23,40 +21,6 @@ def get_human_coordinates(board, current_player):
                     else:
                         print("This space is occupied. Please try again.")
                         break
-
-      
-# get_human_coordinates(board, current_player)
-
-
-
-
-""" Should return the read coordinates for the tic tac toe board from the terminal
-  The coordinates should be in the format  letter, number where the letter is 
-  A, B or C and the number 1, 2 or 3.
-  If the user enters an invalid coordinate (like Z0 or 1A, A11, sadfdsaf) 
-  than a warning message should appear and the coordinates reading process repeated.
-  If the user enters a coordinate that is already taken on the board.
-  than a warning message should appear and the coordinates reading process repeated.
-  If the user enters the word "quit" in any format of capitalized letters the program
-  should stop. """
-
-# Needs to be completly redone.
- 
-
-
-
-""" # THis could be moved as well to the end code tic_tac_toe.py
-if get_human_coordinates(game):
-  game_won = True
-  again = input("The game is over, would you like to play again? (y/n) ")
-  if again.lower() == "y":
-      print("restarting")
-  elif again.lower() == "n":
-      print("Bye")
-      play = False
-  else:
-      print("Not a valid answer")
-      play = False """ 
 
 
 
@@ -68,5 +32,3 @@ if __name__ == "__main__":
     ["X", ".", "."],
     ["X", "X", "."],
   ]
-# coordinates = get_human_coordinates(board_1, "X")
-# print(coordinates) # the only possible returned value can be (0,2) or (1,1) or (1, 2) or (2,2) because they are the only valid ones

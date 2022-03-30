@@ -1,14 +1,4 @@
 def display_board(board):
-  #"""
-  #Should print the tic tac  toe board in a format similar to
-     #  1   2   3
-   # A   X | O | . 
-    #   ---+---+---
-    #B   X | O | .
-     #  --+---+---
-   # C   0 | X | . 
-    #   --+---+---
-  #"""
  
     line = "   ---+---+---"
    
