@@ -11,9 +11,9 @@ from function7 import is_board_full
 import itertools
 
 HUMAN_VS_HUMAN = 1
-RANDOM_AI_VS_RANDOM_AI = 2
+# RANDOM_AI_VS_RANDOM_AI = 2
 HUMAN_VS_RANDOM_AI = 3
-HUMAN_VS_UNBEATABLE_AI = 4
+# HUMAN_VS_UNBEATABLE_AI = 4
 
 
 def main():
@@ -23,10 +23,7 @@ def main():
     is_game_running = True
     while is_game_running:
         display_board(board)
-
-    # 0 or X  - A1, B1, C1 NOT WORKING VERTICAL
-
-        
+      
         ### TO DO ###
         # in each new iteration of the while loop the program should 
         # alternate the value of `current_player` from `X` to `O`
@@ -38,19 +35,17 @@ def main():
         # based on the value of the variables `game_mode` and `current_player` 
         # the programm should should choose betwen the functions
         # get_random_ai_coordinates or get_umbeatable_ai_coordinates or get_human_coordinates
-        x, y = get_human_coordinates(board, current_player)
-        display_board(x)
-        winning_player = get_winning_player(board)
-        its_a_tie = is_board_full(board)
-        current_player = next(player_choice)
         
-
-        # the issue I created is that the program will not stop when the there is a tie because the functions are not well positioned. 
-
-
-        print(f"Current Player: {current_player}")
-        x, y = get_human_coordinates(board, current_player)
-        display_board(x)
+        # I think we will need a if statement here. Depending on the game mode, select the correct functions??
+        if game_mode == HUMAN_VS_HUMAN:
+            x, y = get_human_coordinates(board, current_player)
+            display_board(x)
+            winning_player = get_winning_player(board)
+            its_a_tie = is_board_full(board)
+            current_player = next(player_choice)
+            print(f"Current Player: {current_player}")
+            x, y = get_human_coordinates(board, current_player)
+            # display_board(x)
         
         # board[x][y] = current_player
         ### TO DO ###
@@ -60,6 +55,12 @@ def main():
         winning_player = get_winning_player(board)
         its_a_tie = is_board_full(board)
 
+
+""" elif game_mode == HUMAN_VS_RANDOM_AI:
+    pass
+elif game_mode == RANDOM_AI_VS_RANDOM_AI:
+    pass
+ """
 
 if __name__ == "__main__":
     main()
