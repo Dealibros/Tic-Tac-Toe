@@ -45,7 +45,6 @@ def main():
             current_player = next(player_choice)
             print(f"Current Player: {current_player}")
             x, y = get_human_coordinates(board, current_player)
-            # display_board(x)
         
         # board[x][y] = current_player
         ### TO DO ###
