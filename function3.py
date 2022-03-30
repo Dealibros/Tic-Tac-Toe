@@ -1,17 +1,26 @@
-def get_human_coordinates(board, current_player): 
+def get_human_coordinates(board, current_player):
 
     guess = False
     while guess is False:
         answer = input("Please enter the coordinates: ").upper()
-        print("answer", answer)  
+        print("answer", answer)
         if answer == "QUIT":
             print("Game is over!")
             exit()
         elif answer[0] not in ["A", "B", "C"] or answer[1] not in ["1", "2", "3"]:
             print("Invalid input. Please try again.")
-           
+         
         elif answer:
-            board_values = {'A1': board[0][0], 'A2': board[0][1], 'A3': board[0][2], 'B1': board[1][0], 'B2': board[1][1],  'B3': board[1][2], 'C1': board[2][0], 'C2': board[2][1], 'C3': board[2][2]}
+            board_values = {'A1': board[0][0],
+                            'A2': board[0][1],
+                            'A3': board[0][2],
+                            'B1': board[1][0],
+                            'B2': board[1][1],
+                            'B3': board[1][2],
+                            'C1': board[2][0],
+                            'C2': board[2][1],
+                            'C3': board[2][2]}
+
             for values in board_values:
                 if answer == values:
                     if board_values[values] == ".":
@@ -23,12 +32,10 @@ def get_human_coordinates(board, current_player):
                         break
 
 
-
-
 if __name__ == "__main__":
-  # run this file to test you have implemented correctly the function
-  board_1 = [
-    ["X", "X", "."],
-    ["X", ".", "."],
-    ["X", "X", "."],
-  ]
+    # run this file to test you have implemented correctly the function
+    board_1 = [
+        ["X", "X", "."],
+        ["X", ".", "."],
+        ["X", "X", "."],
+    ]

@@ -14,7 +14,6 @@ RANDOM_AI_VS_RANDOM_AI = 2
 HUMAN_VS_RANDOM_AI = 3
 
 
-
 def main():
     game_mode = get_menu_option(valid_input=True)
     board = get_empty_board()
@@ -25,8 +24,7 @@ def main():
         player_choice = itertools.cycle(["X", "O"])
         current_player = next(player_choice)
         print(f"Current Player: {current_player}")
-        
-        
+            
         if game_mode == 1:
             x, y = get_human_coordinates(board, current_player)
             display_board(x)
@@ -51,8 +49,7 @@ def main():
             is_board_full(board)
             current_player = next(player_choice)
             print(f"Current Player: {current_player}")
-            x , y = get_random_ai_coordinates(board, current_player)
-
+            x, y = get_random_ai_coordinates(board, current_player)
 
         elif game_mode == 3:
             x, y = get_human_coordinates(board, current_player)
@@ -65,14 +62,10 @@ def main():
             is_board_full(board)
             current_player = next(player_choice)
             print(f"Current Player: {current_player}")
-            x , y= get_random_ai_coordinates(board, current_player)
-            
-
-        
-       
+            x, y = get_random_ai_coordinates(board, current_player)
+             
         winning_player = get_winning_player(board)
         is_board_full(board)
-
 
 
 if __name__ == "__main__":
