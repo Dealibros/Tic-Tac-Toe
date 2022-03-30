@@ -45,6 +45,7 @@ def main():
             current_player = next(player_choice)
             print(f"Current Player: {current_player}")
             x, y = get_human_coordinates(board, current_player)
+<<<<<<< HEAD
             # display_board(x)
         elif game_mode == 3:
             x, y = get_human_coordinates(board, current_player), 
@@ -56,6 +57,8 @@ def main():
             x, y = get_random_ai_coordinates(board, current_player)
         
 
+=======
+>>>>>>> a218791c0949cfa98e8866ac224f405410f02361
         
         # board[x][y] = current_player
         ### TO DO ###

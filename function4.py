@@ -26,7 +26,11 @@ def get_random_ai_coordinates(board, current_player):
   should be returned.
   """
 
+<<<<<<< HEAD
 """def get_coord():
+=======
+  """def get_coord():
+>>>>>>> a218791c0949cfa98e8866ac224f405410f02361
       return (1, 1)
 
 
@@ -38,6 +42,7 @@ def get_random_ai_coordinates(board, current_player):
   board[x_coord][y_coord] = 'O'
   print(board)"""
 
+<<<<<<< HEAD
   
 
     
@@ -45,6 +50,22 @@ def get_random_ai_coordinates(board, current_player):
     
       
   
+=======
+  random_choose = True
+  while random_choose:
+    coordinates = [(0,0),(0,1),(0,2),(1,0),(1,1),(1,2),(2,0),(2,1),(2,2)]
+    a,b = coordinates.pop(random.randrange(len(coordinates)))
+    print("print new list",coordinates)
+    if board[a][b] != "X" and board[a][b] != "O":
+      random_choose = True
+      return a,b
+      
+    else:
+      random_choose = False
+      print("cydd")
+      break
+      #board[choose_random_coordinate[0],choose_random_coordinate[1]] = current_player
+>>>>>>> a218791c0949cfa98e8866ac224f405410f02361
       
 
 
@@ -61,7 +82,11 @@ if __name__ == "__main__":
   print(get_random_ai_coordinates(board_1, "X")) # the printed coordinate should be only (0,2) or (1,2)
  """
   
+<<<<<<< HEAD
 """board_2 = [
+=======
+  board_2 = [
+>>>>>>> a218791c0949cfa98e8866ac224f405410f02361
     ["O", "X", "X"],
     ["X", "O", "X"],
     ["X", "O", "X"],

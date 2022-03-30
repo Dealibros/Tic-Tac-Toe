@@ -1,11 +1,6 @@
-# Changed board for display Board
-
-
-# def get_human_coordinates(display_board, player=0, row=0, column=0, just_display=False): Before
-# The current player value is X or 0!!!
-# board 
 def get_human_coordinates(board, current_player): 
 
+<<<<<<< HEAD
   
     """ board[0][0] = "A1"
     board[0][1] = "A2"
@@ -17,6 +12,8 @@ def get_human_coordinates(board, current_player):
     board[2][1] = "C2"
     board[2][2] = "C3" """ 
 
+=======
+>>>>>>> a218791c0949cfa98e8866ac224f405410f02361
     guess = False
     while guess is False:
         answer = input("Please enter the coordinates: ").upper()
@@ -31,6 +28,7 @@ def get_human_coordinates(board, current_player):
             board_values = {'A1': board[0][0], 'A2': board[0][1], 'A3': board[0][2], 'B1': board[1][0], 'B2': board[1][1],  'B3': board[1][2], 'C1': board[2][0], 'C2': board[2][1], 'C3': board[2][2]}
             for values in board_values:
                 # print(values, board_values[values])
+                print("answer", answer)
                 if answer == values:
                     if board_values[values] == ".":
                         board[ord(answer[0]) - 65][int(answer[1]) - 1] = current_player
