@@ -1,38 +1,38 @@
 import random
 
 
-
-
 def get_random_ai_coordinates(board, current_player):
-    """ random_choice = True
-    while random_choice: 
+    game = True
+    while game:
         coordinates = [(0, 0), (0, 1), (0, 2), (1, 0), (1, 1), (1, 2), (2, 0), (2, 1), (2, 2)]
-        a, b = coordinates.pop(random.randrange(len(coordinates)))
+        a, b = random.choice(coordinates)
         print(a, b)
+        print("print list", coordinates)
         if board[a][b] != "X" and board[a][b] != "O":
             board[a][b] = current_player
-            random_choice = True
-            return board[a][b]   
+            return board, current_player
         else:
-            random_choice = False """
+            game = False
+            print("test")
+            return None
 
-            """ break """
-    coordinates = [(0, 0), (0, 1), (0, 2), (1, 0), (1, 1), (1, 2), (2, 0), (2, 1), (2, 2)]   
-    while board[a][b] != "X" and board[a][b] != "O":
-      a, b = coordinates.pop(random.randrange(len(coordinates)))
 
-    """
-    Should return a tuple of 2 numbers. 
-    Each number should be between 0-2. 
-    The chosen number should be only a free coordinate from the board.
-    If the board is full (all spots taken by either X or O) than "None"
-    should be returned.
-    """
 
-    """def get_coord():
+
+
+
+
+      #  a, b = coordinates.pop(random.randrange(len(coordinates))) """
+
+""" Should return a tuple of 2 numbers. 
+  Each number should be between 0-2. 
+  The chosen number should be only a free coordinate from the board.
+  If the board is full (all spots taken by either X or O) than "None"
+  should be returned. """
+    
+
+"""def get_coord():
         return (1, 1)
-
-
     ai_move = get_coord()
     board[ai_move[0]][ai_move[1]] = 'X'
     print(board)
