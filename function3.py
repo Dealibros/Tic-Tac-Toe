@@ -15,7 +15,7 @@ def get_human_coordinates(board, current_player):
     board[1][2] = "B3"
     board[2][0] = "C1"
     board[2][1] = "C2"
-    board[2][2] = "C3" """
+    board[2][2] = "C3" """ 
 
     guess = False
     while guess is False:

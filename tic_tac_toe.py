@@ -2,8 +2,8 @@ from function0 import display_board
 from function1 import get_menu_option
 from function2 import get_empty_board
 from function3 import get_human_coordinates
-""" from function4 import get_random_ai_coordinates
-from function5 import get_umbeatable_ai_coordinates """
+from function4 import get_random_ai_coordinates
+"""from function5 import get_umbeatable_ai_coordinates """
 from function6 import get_winning_player
 from function7 import is_board_full
 
@@ -37,7 +37,7 @@ def main():
         # get_random_ai_coordinates or get_umbeatable_ai_coordinates or get_human_coordinates
         
         # I think we will need a if statement here. Depending on the game mode, select the correct functions??
-        if game_mode == HUMAN_VS_HUMAN:
+        if game_mode == 1:
             x, y = get_human_coordinates(board, current_player)
             display_board(x)
             winning_player = get_winning_player(board)
@@ -46,6 +46,16 @@ def main():
             print(f"Current Player: {current_player}")
             x, y = get_human_coordinates(board, current_player)
             # display_board(x)
+        elif game_mode == 3:
+            x, y = get_human_coordinates(board, current_player), 
+            display_board(x)
+            winning_player = get_winning_player(board)
+            its_a_tie = is_board_full(board)
+            current_player = next(player_choice)
+            print(f"Current Player: {current_player}")
+            x, y = get_random_ai_coordinates(board, current_player)
+        
+
         
         # board[x][y] = current_player
         ### TO DO ###
