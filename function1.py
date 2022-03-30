@@ -1,6 +1,5 @@
 def get_menu_option(valid_input):
-    # took away valid_input  as parameter (some bug here)
-
+   
     g1 = "1. Human vs Human"
     g2 = "2. Random AI vs Random AI"
     g3 = "3. Human vs Random AI"
