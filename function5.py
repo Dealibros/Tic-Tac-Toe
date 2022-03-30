@@ -1,7 +1,7 @@
 def get_umbeatable_ai_coordinates(board, current_player):
   """
   Should return a tuple of 2 numbers. 
-  Each number should be between 0-2.
+  Each number should be between 0-2. 
   The chosen number should be only a free coordinate from the board.
   The chosen coordinate should always stop the other player from winning or
   maximize the current player's chances to win.

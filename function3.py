@@ -1,5 +1,19 @@
 def get_human_coordinates(board, current_player): 
 
+<<<<<<< HEAD
+  
+    """ board[0][0] = "A1"
+    board[0][1] = "A2"
+    board[0][2] = "A3"
+    board[1][0] = "B1"
+    board[1][1] = "B2"
+    board[1][2] = "B3"
+    board[2][0] = "C1"
+    board[2][1] = "C2"
+    board[2][2] = "C3" """ 
+
+=======
+>>>>>>> a218791c0949cfa98e8866ac224f405410f02361
     guess = False
     while guess is False:
         answer = input("Please enter the coordinates: ").upper()

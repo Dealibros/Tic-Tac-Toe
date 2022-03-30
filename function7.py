@@ -12,7 +12,7 @@ def is_board_full(board):
 
 
 """
-should return True if there are no more empty place on the board,
+should return True if  there are no more empty place on the board,
 otherwise should return False
 """
  
