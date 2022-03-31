@@ -14,10 +14,4 @@ def get_menu_option(valid_input):
                 return int(game_mode)
         else:
             print("\nWrong input choice. Try again, by choosing a number between 1 and 3\n")
-
-  
-if __name__ == "__main__":
-    option = get_menu_option(valid_input=False)
-    
-
-             
+          
