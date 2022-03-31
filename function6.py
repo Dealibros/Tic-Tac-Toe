@@ -6,8 +6,6 @@ def is_board_full(board):
     print("Game Over. It's a Tie!")
     exit()
 
-    
-
 
 if __name__ == "__main__":
     """  # run this file to test you have implemented correctly the function
@@ -16,5 +14,4 @@ if __name__ == "__main__":
         ["X", "O", "."],
         ["X", "X", "O"],
       ]
-      print(is_board_full(board_1)) # should return False
-"""
+      print(is_board_full(board_1)) # return False"""
