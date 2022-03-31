@@ -1,7 +1,6 @@
 def get_winning_player(board):
     # Horizontal rown check 
     for row in board:
-       
         if row.count(row[0]) == len(row) and row[0] != ".":
             print(f"Player {row[0]} is the Winner!")
             return "win"

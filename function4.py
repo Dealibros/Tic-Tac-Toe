@@ -8,13 +8,3 @@ def get_random_ai_coordinates(board, current_player):
         if board[a][b] == ".":
             board[a][b] = current_player
             return board, current_player
-
-
-if __name__ == "__main__":
-    # run this file to test you have implemented correctly the function
-    board_1 = [
-      ["O", "O", "."],
-      ["X", "O", "."],
-      ["X", "X", "O"],
-    ]
-    print(get_random_ai_coordinates(board_1, "X"))
