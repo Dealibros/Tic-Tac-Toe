@@ -5,73 +5,57 @@ from function3 import get_human_coordinates
 from function4 import get_random_ai_coordinates
 from function5 import get_winning_player
 from function6 import is_board_full
-
+from banner import banner
 
 import itertools
 import time
-from colorama import Fore 
-from colorama import Style
-
-
-HUMAN_VS_HUMAN = 1
-RANDOM_AI_VS_RANDOM_AI = 2
-HUMAN_VS_RANDOM_AI = 3
+from colorama import Fore, Style 
 
 
 def main():
+    banner()
     game_mode = get_menu_option(valid_input=False)
     board = get_empty_board()
     is_game_running = True
     while is_game_running:
         display_board(board)
-
-        player_choice = itertools.cycle([f"{Fore.GREEN}{'X'}{Style.RESET_ALL}", f"{Fore.YELLOW}{'O'}{Style.RESET_ALL}"])
-        current_player = next(player_choice)
-        print(f"Current Player: {current_player}")
+        if game_mode == 2:
+            time.sleep(1.5) 
             
+        def finale():
+            winning_player = get_winning_player(board)
+            if winning_player == "win":
+                print("\n.......WELL DONE.......")
+                display_board(board)
+                exit()
+            else:
+                is_board_full(board)
+            
+        def game_steps(first_player, second_player):
+            player_choice = itertools.cycle([f"{Fore.GREEN}{'X'}{Style.RESET_ALL}", f"{Fore.YELLOW}{'O'}{Style.RESET_ALL}"])
+
+            current_player = next(player_choice)
+            print(f"Current Player: {current_player}")
+            first_player(board,current_player)
+
+            display_board(board)
+            if game_mode == 2:
+                time.sleep(1.5) 
+            finale()
+
+            current_player = next(player_choice)
+            print(f"Current Player: {current_player}")
+            second_player(board,current_player)
+            finale()
+            return board
+
         if game_mode == 1:
-            x, y = get_human_coordinates(board, current_player)
-            display_board(x)
-            winning_player = get_winning_player(board)
-            if winning_player == "win":
-                print("you are the winneeeer!!!!")
-                display_board(x)
-                exit()
-            is_board_full(board)
-            current_player = next(player_choice)
-            print(f"Current Player: {current_player}")
-            x, y = get_human_coordinates(board, current_player)
-            
+            board = game_steps(get_human_coordinates, get_human_coordinates)
         elif game_mode == 2:
-            x, y = get_random_ai_coordinates(board, current_player)
-            time.sleep(1)
-            display_board(x)
-            winning_player = get_winning_player(board)
-            if winning_player == "win":
-                print("you are the winneeeer!!!!")
-                display_board(x)
-                exit()
-            is_board_full(board)
-            current_player = next(player_choice)
-            print(f"Current Player: {current_player}")
-            x, y = get_random_ai_coordinates(board, current_player)
-
+            board = game_steps(get_random_ai_coordinates, get_random_ai_coordinates)
         elif game_mode == 3:
-            x, y = get_human_coordinates(board, current_player)
-            display_board(x) 
-            winning_player = get_winning_player(board)
-            if winning_player == "win":
-                print("you are the winneeeer!!!!")
-                display_board(x)
-                exit()
-            is_board_full(board)
-            current_player = next(player_choice)
-            print(f"Current Player: {current_player}")
-            x, y = get_random_ai_coordinates(board, current_player)
-             
-        winning_player = get_winning_player(board)
-        is_board_full(board)
-
+            board = game_steps(get_human_coordinates, get_random_ai_coordinates)
+            
 
 if __name__ == "__main__":
     main()

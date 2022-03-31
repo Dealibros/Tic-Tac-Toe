@@ -1,5 +1,5 @@
 def get_menu_option(valid_input):
-   
+
     game = ["1. Human vs Human", "2. Random AI vs Random AI", "3. Human vs Random AI"]
 
     print("\nPICK YOUR GAME MODE\nChoose a number between 1 and 3:\n")
