@@ -1,15 +1,13 @@
 def get_human_coordinates(board, current_player):
-
     guess = False
     while guess is False:
-        answer = input("Please enter the coordinates: ").upper()
-        print("answer", answer)
+        answer = input("\nPlease enter the coordinates: ").upper()
+        print(f"Your move is: {answer}\n")
         if answer == "QUIT":
             print("Game is over!")
             exit()
         elif answer[0] not in ["A", "B", "C"] or answer[1] not in ["1", "2", "3"]:
             print("Invalid input. Please try again.")
-         
         elif answer:
             board_values = {'A1': board[0][0],
                             'A2': board[0][1],
@@ -39,3 +37,8 @@ if __name__ == "__main__":
         ["X", ".", "."],
         ["X", "X", "."],
     ]
+
+x = ord("A") - 65
+print(ord("A")-65)
+print(ord("B")-65)
+print(ord("C")-65)
