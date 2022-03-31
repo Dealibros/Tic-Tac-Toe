@@ -8,6 +8,10 @@ from function6 import is_board_full
 
 
 import itertools
+import time
+from colorama import Fore 
+from colorama import Style
+
 
 HUMAN_VS_HUMAN = 1
 RANDOM_AI_VS_RANDOM_AI = 2
@@ -20,8 +24,8 @@ def main():
     is_game_running = True
     while is_game_running:
         display_board(board)
-      
-        player_choice = itertools.cycle(["X", "O"])
+
+        player_choice = itertools.cycle([f"{Fore.GREEN}{'X'}{Style.RESET_ALL}", f"{Fore.YELLOW}{'O'}{Style.RESET_ALL}"])
         current_player = next(player_choice)
         print(f"Current Player: {current_player}")
             
@@ -40,7 +44,8 @@ def main():
             
         elif game_mode == 2:
             x, y = get_random_ai_coordinates(board, current_player)
-            display_board(x) 
+            time.sleep(1)
+            display_board(x)
             winning_player = get_winning_player(board)
             if winning_player == "win":
                 print("you are the winneeeer!!!!")
