@@ -1,10 +1,11 @@
 from colorama import Fore, Style
 
+
 def check_row(orientation):
     if orientation.count(orientation[0]) == len(orientation) and orientation[0] != "." and len(orientation) == 3:
-        print(f"{Fore.MAGENTA}{'PLAYER '}{Style.RESET_ALL}{orientation[0]}{Fore.MAGENTA}{' sIS THE WINNER!'}{Style.RESET_ALL}")
+        print(f"""{Fore.MAGENTA}{'PLAYER '}{Style.RESET_ALL}{orientation[0]}{Fore.MAGENTA}{' IS THE WINNER!'}{Style.RESET_ALL}""")
         return True
-    
+   
 
 def get_winning_player(board):
     # Horizontal rown check 

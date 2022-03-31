@@ -1,5 +1,6 @@
 from colorama import Fore, Style
 
+
 def is_board_full(board):
     for row in board:
         for item in row:

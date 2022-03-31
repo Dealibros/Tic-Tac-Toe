@@ -9,7 +9,7 @@ from banner import banner
 
 import itertools
 import time
-from colorama import Fore, Style 
+from colorama import Fore, Style
 
 
 def main():
@@ -20,8 +20,8 @@ def main():
     while is_game_running:
         display_board(board)
         if game_mode == 2:
-            time.sleep(1.5) 
-            
+            time.sleep(1.5)
+         
         def finale():
             winning_player = get_winning_player(board)
             if winning_player == "win":
@@ -30,22 +30,22 @@ def main():
                 exit()
             else:
                 is_board_full(board)
-            
+          
         def game_steps(first_player, second_player):
             player_choice = itertools.cycle([f"{Fore.GREEN}{'X'}{Style.RESET_ALL}", f"{Fore.YELLOW}{'O'}{Style.RESET_ALL}"])
 
             current_player = next(player_choice)
             print(f"Current Player: {current_player}")
-            first_player(board,current_player)
+            first_player(board, current_player)
 
             display_board(board)
             if game_mode == 2:
-                time.sleep(1.5) 
+                time.sleep(1.5)
             finale()
 
             current_player = next(player_choice)
             print(f"Current Player: {current_player}")
-            second_player(board,current_player)
+            second_player(board, current_player)
             finale()
             return board
 
