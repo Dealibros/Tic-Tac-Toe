@@ -2,7 +2,7 @@ def get_menu_option(valid_input):
    
     game = ["1. Human vs Human", "2. Random AI vs Random AI", "3. Human vs Random AI"]
 
-    print("\nPick your game mode(Choose a number between 1 and 3):\n")
+    print("\nPICK YOUR GAME MODE\nChoose a number between 1 and 3:\n")
     print(f"{game[0]}\n{game[1]}\n{game[2]}\n")
 
     while valid_input is False:
@@ -18,6 +18,6 @@ def get_menu_option(valid_input):
   
 if __name__ == "__main__":
     option = get_menu_option(valid_input=False)
-    print(option) 
+    
 
              

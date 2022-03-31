@@ -2,13 +2,10 @@ def display_board(board):
 
     line = "   ---+---+---"
 
-    print("\n    1   2   3\n")
-    print(f"A   {board[0][0]} | {board[0][1]} | {board[0][2]}")
-    print(line)
-    print(f"B   {board[1][0]} | {board[1][1]} | {board[1][2]}")
-    print(line)
-    print(f"C   {board[2][0]} | {board[2][1]} | {board[2][2]}")
-    print(line, "\n")
+    print(f"""\n        1   2   3\n
+    A   {board[0][0]} | {board[0][1]} | {board[0][2]}\n    {line}
+    B   {board[1][0]} | {board[1][1]} | {board[1][2]}\n    {line}
+    C   {board[2][0]} | {board[2][1]} | {board[2][2]}\n    {line}\n""")
 
 
 if __name__ == "__main__":

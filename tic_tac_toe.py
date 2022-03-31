@@ -19,7 +19,7 @@ HUMAN_VS_RANDOM_AI = 3
 
 
 def main():
-    game_mode = get_menu_option(valid_input=True)
+    game_mode = get_menu_option(valid_input=False)
     board = get_empty_board()
     is_game_running = True
     while is_game_running:
