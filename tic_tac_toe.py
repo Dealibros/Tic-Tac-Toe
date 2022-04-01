@@ -1,11 +1,8 @@
-from function0 import display_board
-from function1 import get_menu_option
-from function2 import get_empty_board
-from function3 import get_human_coordinates
-from function4 import get_random_ai_coordinates
-from function5 import get_winning_player
-from function6 import is_board_full
-from banner import banner
+from starting_point import banner, get_menu_option
+from board import get_empty_board, display_board
+from coordinates import get_human_coordinates, get_random_ai_coordinates
+from final_stage import get_winning_player, is_board_full
+
 
 import itertools
 import time

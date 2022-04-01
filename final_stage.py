@@ -2,7 +2,7 @@ from colorama import Fore, Style
 
 def check_row(orientation):
     if orientation.count(orientation[0]) == len(orientation) and orientation[0] != "." and len(orientation) == 3:
-        print(f"{Fore.MAGENTA}{'PLAYER '}{Style.RESET_ALL}{orientation[0]}{Fore.MAGENTA}{' sIS THE WINNER!'}{Style.RESET_ALL}")
+        print(f"{Fore.MAGENTA}{'PLAYER '}{Style.RESET_ALL}{orientation[0]}{Fore.MAGENTA}{' IS THE WINNER!'}{Style.RESET_ALL}")
         return True
     
 
@@ -34,3 +34,11 @@ def get_winning_player(board):
     if check_row(diags_right):
         return "win"
 
+
+def is_board_full(board):
+    for row in board:
+        for item in row:
+            if item == ".":
+                return False
+    print(f"{Fore.RED}{'Game Over. It is a Tie!'}{Style.RESET_ALL}\n")
+    exit()
